@@ -35,8 +35,6 @@ class Siswa extends Controller
             'tanggal_lahir' => 'required',
             'anak_ke' => 'required|gt:0',
             'jlh_saudara' => 'nullable|gt:0',
-            'saudara_tiri' => 'nullable|gt:0',
-            'saudara_angkat' => 'nullable|gt:0',
             'bahasa' => 'required',
             'agama' => 'required',
             'jarak' => 'required|gt:0',
@@ -137,7 +135,7 @@ class Siswa extends Controller
     public function change_password(Request $request, User $user){
         $validated = $request->validate([
             'old_password' => ['required', function ($attribute, $value, $fail) use ($user) {
-                if (!\Hash::check($value, $user->password)) {
+                if (Hash::check($value, $user->password)) {
                     return $fail(__('Password saat ini tidak sesuai'));
                 }
             }],

@@ -14,19 +14,20 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('year_id');
-            $table->foreignId('group_id');
-            $table->string('nama_lengkap');
-            $table->string('foto')->nullable();
-            $table->string('nisn')->unique();
-            $table->string('nis')->unique();
-            $table->string('status');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('jenis_kelamin');
-            $table->timestamps();
-        });
+        $table->id();
+        $table->string('nisn', 10)->unique();
+        $table->string('nis')->unique();
+        $table->string('nama_lengkap');
+        $table->enum('jenis_kelamin', ['L', 'P']);
+        $table->string('email')->unique();
+        $table->string('password');
+        $table->string('role')->default('siswa');
+        $table->string('foto')->nullable();
+        $table->foreignId('tahun_ajar_id')->nullable()->constrained('tahun_ajar');
+        $table->foreignId('kelas_id')->nullable()->constrained('kelas');
+        $table->rememberToken();
+        $table->timestamps();
+});
     }
 
     /**

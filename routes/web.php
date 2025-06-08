@@ -58,3 +58,14 @@ Route::post('admin/mutasi/{siswa}', [Admin::class, 'edit_mutasi'])->middleware('
 Route::get('admin/print', [Printer::class, 'daftar_siswa'])->middleware('admin');
 Route::get('admin/print/{siswa}', [Printer::class, 'data_siswa'])->middleware('auth');
 
+// Login Functions
+Route::get('/', [Authorization::class, 'index'])->name('login')->middleware('guest');
+Route::post('/', [Authorization::class, 'auth'])->middleware('guest');
+Route::get('/register', [Authorization::class, 'showRegistrationForm'])->middleware('guest');
+Route::post('/register', [Authorization::class, 'register'])->middleware('guest');
+Route::get('/masuk', [Authorization::class, 'adjust'])->middleware('auth');
+Route::post('/keluar', [Authorization::class, 'logout']);
+
+Route::get('/register', [Authorization::class, 'showRegistrationForm'])->name('register')->middleware('guest');
+Route::get('/register', [Authorization::class, 'showRegistrationForm'])->name('register')->middleware('guest');
+Route::post('/register', [Authorization::class, 'register'])->middleware('guest');

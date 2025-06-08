@@ -45,9 +45,9 @@ class TahunController extends Controller
             'status' => 'required',
         ]);
 
-        if ($validated['status'] == 'aktif'){
-            $set_off = Year::where('status', 'aktif')->get();
-            $set_off->update(['status' => 'tidak aktif']);
+        // Perbaikan: Gunakan update langsung pada query builder
+        if ($validated['status'] == 'aktif') {
+            Year::where('status', 'aktif')->update(['status' => 'tidak aktif']);
         }
 
         Year::create($validated);
@@ -93,9 +93,11 @@ class TahunController extends Controller
             'status' => 'required',
         ]);
 
-        if ($validated['status'] == 'aktif'){
-            $set_off = Year::where('status', 'aktif')->get();
-            $set_off->update(['status' => 'tidak aktif']);
+        // Perbaikan: Gunakan update langsung pada query builder
+        if ($validated['status'] == 'aktif') {
+            Year::where('status', 'aktif')
+                ->where('id', '!=', $tahun->id) // Hindari update record yang sedang diupdate
+                ->update(['status' => 'tidak aktif']);
         }
 
         $tahun->update($validated);
@@ -111,6 +113,6 @@ class TahunController extends Controller
     public function destroy(Year $tahun)
     {
         $tahun->delete();
-        return redirect('/dashboard')->with('success', 'tahun ajaran berhasil dihapus!');
+        return redirect('/dashboard')->with('success', 'Tahun ajaran berhasil dihapus!');
     }
 }

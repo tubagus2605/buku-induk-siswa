@@ -65,16 +65,6 @@
           <td>{{$res->biodata->jlh_saudara}}</td>
         </tr>
         <tr>
-          <td style="width:350px;">Saudara Angkat</td>
-          <td>:</td>
-          <td>{{$res->biodata->saudara_angkat}}</td>
-        </tr>
-        <tr>
-          <td style="width:350px;">Saudara Tiri</td>
-          <td>:</td>
-          <td>{{$res->biodata->saudara_tiri}}</td>
-        </tr>
-        <tr>
           <td style="width:350px;">Bahasa</td>
           <td>:</td>
           <td>{{$res->biodata->bahasa}}</td>

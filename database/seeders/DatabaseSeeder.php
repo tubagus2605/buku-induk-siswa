@@ -26,8 +26,8 @@ class DatabaseSeeder extends Seeder
             'group_id' => 0,
             'nama_lengkap' => 'Admin',
             'foto' => NULL,
-            'nisn' => 'XXXXXXXXXX',
-            'nis' => 'YYYYYYYYY',
+            'nisn' => '19220408',
+            'nis' => '19220406',
             'status' => 'admin',
             'email' => 'adminweb@gmail.com',
             'password' => Hash::make('admin123'),
@@ -39,10 +39,10 @@ class DatabaseSeeder extends Seeder
             'group_id' => 1,
             'nama_lengkap' => 'Siswa',
             'foto' => NULL,
-            'nisn' => '1233123341',
-            'nis' => '1233123',
+            'nisn' => '19220407',
+            'nis' => '19220409',
             'status' => 'siswa',
-            'email' => 'tesakunsiswa@gmail.com',
+            'email' => 'siswa@gmail.com',
             'password' => Hash::make('siswa123'),
             'jenis_kelamin' => 'L',
         ]);
@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('years')->insert([
-            'tahun_ajaran' => '2022/2023',
+            'tahun_ajaran' => '2024/2025',
             'status' => 'aktif',
             'created_at' => now(),
             'updated_at' => now()
