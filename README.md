@@ -27,8 +27,6 @@
 
 ## How to use
 - open your terminal
-- clone this repo by running `git clone https://github.com/nomenklatur/laravel-bukuinduksiswa.git`
-- run `cd laravel-bukuinduksiswa`
 - run `composer install`
 - run `cp .env.example .env`
 - run `php artisan key:generate`
