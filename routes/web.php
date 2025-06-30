@@ -29,6 +29,7 @@ Route::post('/keluar', [Authorization::class, 'logout']);
 Route::get('/home', [Siswa::class, 'index'])->middleware('auth');
 Route::get('/biodata/{biodata}', [Siswa::class, 'bio_form'])->middleware('auth');
 Route::put('/biodata/{biodata}', [Siswa::class, 'edit_bio'])->middleware('auth');
+Route::put('/biodata/{uri}', [BiodataController::class, 'update'])->name('biodata.update');
 Route::get('/data-ayah/{dad}', [Siswa::class, 'dad_form'])->middleware('auth');
 Route::put('/data-ayah/{dad}', [Siswa::class, 'edit_dad'])->middleware('auth');
 Route::get('/data-ibu/{mom}', [Siswa::class, 'mom_form'])->middleware('auth');
