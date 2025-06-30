@@ -1,4 +1,4 @@
-![WhatsApp Image 2023-03-10 at 14 42 29](https://user-images.githubusercontent.com/88763669/224482672-5380a401-ec9e-44cf-8475-743650aad894.jpeg)
+
 
 
 # Buku Induk Siswa
@@ -38,5 +38,5 @@
 - your app is ready
 
 ## Contact
-Created by [Dimas Eka Putra](https://www.linkedin.com/in/masdimasekaputra/) - feel free to contact me!
+Created by Tubagus Faturahman - feel free to contact me!
 
